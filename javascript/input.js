@@ -30,4 +30,4 @@ user.question('Filename:', function(filename) {
 });
 
 // This part isn't after the console input
-console.log('here');
+//console.log('here');
