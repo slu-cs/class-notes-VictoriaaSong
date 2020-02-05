@@ -12,7 +12,7 @@ const user = readline.createInterface({
 // Console input
 user.question('Filename:', function(filename) {
   // File configuration
-  const file = realine.createInterface({
+  const file = readline.createInterface({
     // fs is needed to be imported
     input: fs.createReadStream(filename)
   });
