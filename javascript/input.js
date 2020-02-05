@@ -9,7 +9,7 @@ const user = readline.createInterface({
 })
 
 // Console input
-user.question('Filename', function(filename) {
+user.question('Filename:', function(filename) {
   console.log(filename);
-  
+
 });
