@@ -5,7 +5,7 @@
 const map = function(array, transform){
   const copy = [];
   for(const element of array){
-    copy.push(transform(elemnt));
+    copy.push(transform(element));
   }
   return copy;
 };
