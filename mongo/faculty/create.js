@@ -36,17 +36,16 @@ mongoose.connection.dropDatabase(function() {
   // Save the new data
   harcourt.save(function(error) {
     // Run a callback incase mongoose is closed before the data is saved
-    if(error) console.error(error.stack);
+    if (error) console.error(error.stack);
 
     torrey.save(function(error) {
-      if(error) console.error(error.stack);
-
+      if (error) console.error(error.stack);
 
       lee.save(function(error) {
-        if(error) console.error(error.stack);
+        if (error) console.error(error.stack);
 
         // Disconnect
-        mongoose.connection.close((function(error) {
+        mongoose.connection.close(function() {
           console.log('Database is ready.');
         });
       });
