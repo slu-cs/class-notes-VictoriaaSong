@@ -31,24 +31,23 @@ const lee = new Professor({
 });
 
 // Delete any previous data
-mongoose.connection.dropDatabase(function() {
+mongoose.connection.dropDatabase()
+  /*
+  .then(function() {
+    return harcourt.save();
+  });
+  */
 
   // Save the new data
-  harcourt.save(function(error) {
-    // Run a callback incase mongoose is closed before the data is saved
-    if (error) console.error(error.stack);
+  // Run a callback incase mongoose is closed before the data is saved
+  .then(() =>  harcourt.save());
 
-    torrey.save(function(error) {
-      if (error) console.error(error.stack);
+  .then(() =>  torrey.save());
 
-      lee.save(function(error) {
-        if (error) console.error(error.stack);
+  .then(() =>  lee.save());
 
-        // Disconnect
-        mongoose.connection.close(function() {
-          console.log('Database is ready.');
-        });
-      });
-    });
-  });
-});
+  .then(() => mongoose.connection.close())
+
+  .then(() => console.log('Database is ready.'))
+
+  .catch(error => console.error(error.stack));
