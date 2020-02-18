@@ -1,4 +1,4 @@
-// Suppose an asynchronous function f can be called as shown below. 
+// Suppose an asynchronous function f can be called as shown below.
 f('hello', function(error, result) {
   if (error) console.error(error.stack);
   console.log(result);
@@ -14,12 +14,12 @@ f('hello')
 // Suppose q1 and q2 are Mongoose queries.
 // You want to run q1 and print the result,
 // and afterwards run q2 and print the result.
-
+ 
 // How can we do this without promises?
 q1.exec(function(error, r1) {
   if (error) console.log(error.stack);
   console.log(r1);
-  
+
   q2.exec(function(error, r2) {
     if (error) console.log(error.stack);
     console.log(r2);
