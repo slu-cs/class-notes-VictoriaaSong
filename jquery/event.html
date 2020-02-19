@@ -32,7 +32,7 @@
         console.log('Form data: ', form.serialize());
       });
 
-      $(document).on('click', 'img', function(click){
+      $(document).on('click', 'img', function(event){
         const img = $(this);
         const id = img.attr('id');
         console.log('Clicked img', id);
