@@ -5,13 +5,17 @@
   <head>
     <meta charset="utf-8">
     <title>To-Do Exercise</title>
+    <h2>
+      TO-DO List
+    </h2>
   </head>
   <body>
     <form>
-      <input type="text" name="left">
-      <input type="text" name="right">
-      <button type="submit">TO-DO List</button>
+      <input type="text" name="content">
+      <button type="submit">Add</button>
     </form>
+
+    <div id="history"></div>
 
 
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"
@@ -20,7 +24,32 @@
     </script>
 
     <script>
+      // Number of times the form has submitted
+      let counter = 0;
 
+      // Respond to submit events
+      $('form').on('submit', function(event){
+        const form = $(this);  // JQuery object representing the form
+        event.preventDefault(); // Don't really submit the form
+
+        // Create a new list
+        const list = $('<ul></ul>');
+
+        // Translate each input value into a list item
+        const inputs = form.find('input'); // JQuery object represent all inputs
+        for(let input of inputs){
+          input = $(input);  // Turn into your JQuery
+          const li = $(`<li>${input.val()}</li>`); // New list item
+          list.append(li);
+          input.val('');  // Empty out the boxes
+        }
+
+        counter++;
+
+
+        // Add to the page
+        $('#history').append(list);
+      });
     </script>
   </body>
 </html>
