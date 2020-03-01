@@ -61,7 +61,7 @@ const question = function(prompt) {
 };
 
 // B. Make small talk again, using promises.
-question(str1)
+question()
   .then('What is your name? ', function(str1) {
     console.log('Hello', str1, '.');
     return question();
