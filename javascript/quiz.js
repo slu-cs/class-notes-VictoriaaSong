@@ -56,6 +56,7 @@ user.question(function(str1, callback1){
   });
 });
 
+user.question('Alice', 'fine');
 
 // The user.question method doesn't actually return a promise, so here is a question function that does.
 // Call this question function in part B instead of calling the user.question method.
