@@ -22,8 +22,7 @@ labs.sort((a, b) => a.seats-b.seats);
 const numbers = [5, 4, 3, 2, 1];
 
 // A. Get the first even number (by invoking the built-in find method).
-const even = numbers.filter(x => x % 2 < 1);
-console.log(even);
+const even = numbers.find(x => x % 2 < 1);
 
 // B. Define a standalone find function. The array is its first argument and the callback is its second argument.
 // const find = function(array, test){
@@ -65,16 +64,16 @@ const question = function(prompt) {
 };
 
 // B. Make small talk again, using promises.
-question(str1)
-  .then(function(str1) {
-    console.log('What is your name? ');
-    console.log('Hello ', str1, '.');
-    return question();
-  })
-  .then(function(str2){
-    console.log('How are you doing? ')
-    console.log('I am also ', str2, '.')
-  });
+// question(str1)
+//   .then(function(str1) {
+//     console.log('What is your name? ');
+//     console.log('Hello ', str1, '.');
+//     return question();
+//   })
+//   .then(function(str2){
+//     console.log('How are you doing? ')
+//     console.log('I am also ', str2, '.')
+//   });
 
 //////////////////////////////////////////////////////////////// Question 4
 // Question 4 is commented out because otherwise it would interfere with Question 3.
