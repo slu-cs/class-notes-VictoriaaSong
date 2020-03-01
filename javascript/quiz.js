@@ -9,14 +9,16 @@ const labs = [
 ];
 
 // A. Generate a new array containing the seat numbers of all the labs (by invoking the built-in map method).
-const seats1 = labs.distinct('seats');
+const seats1 = labs.map(l => l.seats);
 console.log(seats1);
 
 // B. Generate a new array containing only the labs with more than 10 seats (by invoking the built-in filter method).
-const seats2 = labs.find({seats: {$gt: 10}});
+const seats2 = labs.filter(x => x.seats>10)
+console.log(seats2);
 
 // C. Sort the existing array in order of (increasing) seat numbers (by invoking the built-in sort method).
 labs.sort((a, b) => a.seats-b.seats);
+console.log(labs);
 
 //////////////////////////////////////////////////////////////// Question 2
 
@@ -24,6 +26,7 @@ const numbers = [5, 4, 3, 2, 1];
 
 // A. Get the first even number (by invoking the built-in find method).
 const even = numbers.find(x => x % 2 == 1).limit(1);
+console.log(even);
 
 // B. Define a standalone find function. The array is its first argument and the callback is its second argument.
 const find = function(array, test){
