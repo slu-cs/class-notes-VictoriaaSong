@@ -10,15 +10,12 @@ const labs = [
 
 // A. Generate a new array containing the seat numbers of all the labs (by invoking the built-in map method).
 const seats1 = labs.map(l => l.seats);
-console.log(seats1);
 
 // B. Generate a new array containing only the labs with more than 10 seats (by invoking the built-in filter method).
 const seats2 = labs.filter(x => x.seats>10)
-console.log(seats2);
 
 // C. Sort the existing array in order of (increasing) seat numbers (by invoking the built-in sort method).
 labs.sort((a, b) => a.seats-b.seats);
-console.log(labs);
 
 //////////////////////////////////////////////////////////////// Question 2
 
@@ -30,14 +27,14 @@ const firstEven = even[0];
 console.log(firstEven);
 
 // B. Define a standalone find function. The array is its first argument and the callback is its second argument.
-const find = function(array, test){
-  for(const element of array){
-    if(test(element)){
-      return element;
-    }
-  }
-  return undefined;
-};
+// const find = function(array, test){
+//   for(const element of array){
+//     if(test(element)){
+//       return element;
+//     }
+//   }
+//   return undefined;
+// };
 
 //////////////////////////////////////////////////////////////// Question 3
 
