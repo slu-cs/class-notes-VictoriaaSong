@@ -46,15 +46,13 @@ const user = readline.createInterface({
 
 // A. Make small talk, using traditional callbacks.
 
-user.question('What is your name? ', function(str1){
-  console.log('Hello', str1, '.');
-
-  user.question('How are you doing? ', function(str2){
-    console.log('I am also', str2, '.');
-  });
-});
-console.log('here');
-
+// user.question('What is your name? ', function(str1){
+//   console.log('Hello', str1, '.');
+//
+//   user.question('How are you doing? ', function(str2){
+//     console.log('I am also', str2, '.');
+//   });
+// });
 
 // The user.question method doesn't actually return a promise, so here is a question function that does.
 // Call this question function in part B instead of calling the user.question method.
@@ -63,16 +61,14 @@ const question = function(prompt) {
 };
 
 // B. Make small talk again, using promises.
-// question(str1)
-//   .then(function(str1) {
-//     console.log('What is your name? ');
-//     console.log('Hello ', str1, '.');
-//     return question();
-//   })
-//   .then(function(str2){
-//     console.log('How are you doing? ')
-//     console.log('I am also ', str2, '.')
-//   });
+question(str1)
+  .then('What is your name? ', function(str1) {
+    console.log('Hello', str1, '.');
+    return question();
+  })
+  .then('How are you doing? ', function(str2){
+    console.log('I am also', str2, '.')
+  });
 
 //////////////////////////////////////////////////////////////// Question 4
 // Question 4 is commented out because otherwise it would interfere with Question 3.
