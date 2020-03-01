@@ -49,7 +49,7 @@ const user = readline.createInterface({
 user.question('What is your name? ', function(str1){
   console.log('Hello ', str1, '.');
 
-  question2('How are you doing? ', function(str2){
+  user.question('How are you doing? ', function(str2){
     console.log('I am also ', str2, '.');
   });
 });
