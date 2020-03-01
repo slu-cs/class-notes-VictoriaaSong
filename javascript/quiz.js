@@ -10,6 +10,7 @@ const labs = [
 
 // A. Generate a new array containing the seat numbers of all the labs (by invoking the built-in map method).
 const seats1 = labs.distinct('seats');
+console.log(seats1);
 
 // B. Generate a new array containing only the labs with more than 10 seats (by invoking the built-in filter method).
 const seats2 = labs.find({seats: {$gt: 10}});
