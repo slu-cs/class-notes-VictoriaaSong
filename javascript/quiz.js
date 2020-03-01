@@ -71,7 +71,7 @@ question(str1)
     return question();
   })
   .then(function(str2){
-    console.log('How are you doing? '))
+    console.log('How are you doing? ')
     console.log('I am also ', str2, '.')
   });
 
