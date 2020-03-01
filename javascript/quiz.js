@@ -53,6 +53,7 @@ user.question('What is your name? ', function(str1){
     console.log('I am also', str2, '.');
   });
 });
+console.log('here');
 
 
 // The user.question method doesn't actually return a promise, so here is a question function that does.
