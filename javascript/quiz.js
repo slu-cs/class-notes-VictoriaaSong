@@ -25,8 +25,9 @@ console.log(labs);
 const numbers = [5, 4, 3, 2, 1];
 
 // A. Get the first even number (by invoking the built-in find method).
-const even = numbers.find(x => x % 2 == 1).limit(1);
-console.log(even);
+const even = numbers.find(x => x % 2 == 1);
+const firstEven = even[0];
+console.log(firstEven);
 
 // B. Define a standalone find function. The array is its first argument and the callback is its second argument.
 const find = function(array, test){
