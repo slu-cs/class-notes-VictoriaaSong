@@ -25,14 +25,14 @@ const numbers = [5, 4, 3, 2, 1];
 const even = numbers.find(x => x % 2 < 1);
 
 // B. Define a standalone find function. The array is its first argument and the callback is its second argument.
-// const find = function(array, test){
-//   for(const element of array){
-//     if(test(element)){
-//       return element;
-//     }
-//   }
-//   return undefined;
-// };
+const find = function(array, test){
+  for(const element of array){
+    if(test(element)){
+      return element;
+    }
+  }
+  return undefined;
+};
 
 //////////////////////////////////////////////////////////////// Question 3
 
@@ -45,14 +45,13 @@ const user = readline.createInterface({
 });
 
 // A. Make small talk, using traditional callbacks.
+user.question('What is your name? ', function(str1){
+  console.log('Hello', str1, '.');
 
-// user.question('What is your name? ', function(str1){
-//   console.log('Hello', str1, '.');
-//
-//   user.question('How are you doing? ', function(str2){
-//     console.log('I am also', str2, '.');
-//   });
-// });
+  user.question('How are you doing? ', function(str2){
+    console.log('I am also', str2, '.');
+  });
+});
 
 // The user.question method doesn't actually return a promise, so here is a question function that does.
 // Call this question function in part B instead of calling the user.question method.
@@ -74,27 +73,27 @@ question('What is your name? ')
 // Question 4 is commented out because otherwise it would interfere with Question 3.
 // When you're ready to work on Question 4, uncomment it and comment out Question 3.
 
-// This function returns a promise, which produces 42 after an asynchronous delay of one second.
-// const f1 = function() {
-//   return new Promise(resolve => setTimeout(() => resolve(42), 1000));
-// };
-//
-// // This function returns a promise, which produces 24 after an asynchronous delay of one second.
-// const f2 = function() {
-//   return new Promise(resolve => setTimeout(() => resolve(42), 1000));
-// };
-//
-// // Run f1 and f2 in parallel and log 'f1', 'f2', or 'equal' to indicate which function returned the larger result.
-// const compare = [f1, f2];
-// Promise.all(compare)
-//   .then(function(result){
-//     if(result[0] > result[1]){
-//       console.log('f1');
-//     }
-//     else if(result[0] < result[1]){
-//       console.log('f2');
-//     }
-//     else{
-//       console.log('equal');
-//     }
-//   });
+This function returns a promise, which produces 42 after an asynchronous delay of one second.
+const f1 = function() {
+  return new Promise(resolve => setTimeout(() => resolve(42), 1000));
+};
+
+// This function returns a promise, which produces 24 after an asynchronous delay of one second.
+const f2 = function() {
+  return new Promise(resolve => setTimeout(() => resolve(42), 1000));
+};
+
+// Run f1 and f2 in parallel and log 'f1', 'f2', or 'equal' to indicate which function returned the larger result.
+const compare = [f1, f2];
+Promise.all(compare)
+  .then(function(result){
+    if(result[0] > result[1]){
+      console.log('f1');
+    }
+    else if(result[0] < result[1]){
+      console.log('f2');
+    }
+    else{
+      console.log('equal');
+    }
+  });
