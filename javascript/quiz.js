@@ -81,7 +81,7 @@ const f1 = function() {
 
 // This function returns a promise, which produces 24 after an asynchronous delay of one second.
 const f2 = function() {
-  return new Promise(resolve => setTimeout(() => resolve(24), 1000));
+  return new Promise(resolve => setTimeout(() => resolve(42), 1000));
 };
 
 // Run f1 and f2 in parallel and log 'f1', 'f2', or 'equal' to indicate which function returned the larger result.
