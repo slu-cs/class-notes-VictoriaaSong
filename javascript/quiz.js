@@ -88,7 +88,7 @@ const f2 = function() {
 const compare = [f1, f2];
 Promise.all(compare)
   .then(function(result){
-    if(result[0] == result[1]){
+    if(result[0] === result[1]){
       console.log('equal');
     }
     if(result[0] > result[1]){
