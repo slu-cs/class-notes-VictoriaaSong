@@ -76,7 +76,7 @@ const question = function(prompt) {
 
 // This function returns a promise, which produces 42 after an asynchronous delay of one second.
 const f1 = function() {
-  return new Promise(resolve => setTimeout(() => resolve(42), 1000));
+  return new Promise(resolve => setTimeout(() => resolve(2), 1000));
 };
 
 // This function returns a promise, which produces 24 after an asynchronous delay of one second.
