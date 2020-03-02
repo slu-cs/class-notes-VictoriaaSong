@@ -98,5 +98,5 @@ Promise.all(compare)
       console.log('f2');
     }
 
-    
+
   });
