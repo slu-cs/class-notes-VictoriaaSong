@@ -61,19 +61,19 @@ const question = function(prompt) {
 };
 
 // B. Make small talk again, using promises.
-question()
-  .then('What is your name? ', function(str1) {
-    console.log('Hello', str1, '.');
-    return question();
-  })
-  .then('How are you doing? ', function(str2){
-    console.log('I am also', str2, '.')
-  });
+// question()
+//   .then('What is your name? ', function(str1) {
+//     console.log('Hello', str1, '.');
+//     return question();
+//   })
+//   .then('How are you doing? ', function(str2){
+//     console.log('I am also', str2, '.')
+//   });
 
 //////////////////////////////////////////////////////////////// Question 4
 // Question 4 is commented out because otherwise it would interfere with Question 3.
 // When you're ready to work on Question 4, uncomment it and comment out Question 3.
-/*
+
 // This function returns a promise, which produces 42 after an asynchronous delay of one second.
 const f1 = function() {
   return new Promise(resolve => setTimeout(() => resolve(42), 1000));
@@ -85,4 +85,8 @@ const f2 = function() {
 };
 
 // Run f1 and f2 in parallel and log 'f1', 'f2', or 'equal' to indicate which function returned the larger result.
-*/
+const compare = [f1, f2];
+Promise.all(compare)
+  .then((f1 == f2) => console.log('equal'))
+  .then((f1 > f2) => console.log('f1'))
+  .then((f1 < f2) => console.log('f2'));
