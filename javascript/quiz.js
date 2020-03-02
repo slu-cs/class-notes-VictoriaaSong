@@ -91,14 +91,12 @@ Promise.all(compare)
     if(result[0] === result[1]){
       console.log('equal');
     }
-    if(result[0] > result[1]){
+    else if(result[0] > result[1]){
       console.log('f1');
     }
-    if(result[0] < result[1]){
+    else{
       console.log('f2');
     }
 
-    else{
-      console.log('false');
-    }
+    
   });
