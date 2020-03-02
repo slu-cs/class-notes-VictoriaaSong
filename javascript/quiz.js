@@ -87,14 +87,14 @@ const f2 = function() {
 // Run f1 and f2 in parallel and log 'f1', 'f2', or 'equal' to indicate which function returned the larger result.
 const compare = [f1, f2];
 Promise.all(compare)
-  .then(function(f1, f2){
-    if(f1 == f2){
+  .then(function(result){
+    if(result[0] == result[1]){
       console.log('equal');
     }
-    if(f1 > f2){
+    if(result[0] > result[1]){
       console.log('f1');
     }
-    if(f1 < f2){
+    if(result[0] < result[1]){
       console.log('f2');
     }
   });
