@@ -11,5 +11,5 @@ app.get('/', function(request, response){
 
 
 // Start the server
-app.list(3000);  // 3000 is the port
+app.listen(3000);  // 3000 is the port
 console.log('Server is ready.')
