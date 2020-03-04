@@ -26,7 +26,7 @@ app.get('/zap/:z', function(request, response){
 
 // cs-linuxlab-18.stlawu.edu:3000/zap?x=X&y=Y
 app.get('/zap', function(request, response){
-  response.send(`Hello zap with ${request.query.x} and ${request.query.x}`);
+  response.send(`Hello zap with ${request.query.x} and ${request.query.y}`);
 });
 
 // Start the server
