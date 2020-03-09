@@ -1,0 +1,12 @@
+<html>
+  <%- include('../head'); -%>
+  <body>
+    <h1>Cakes</h1>
+    <ul>
+      <%_ for (const cake of cakes) { -%>
+        <li><a href="/cakes/<%= cake.id -%>"><%= cake.flavor -%></a></li>
+      <%_ } -%>
+
+    </ul>
+  </body>
+</html>
