@@ -18,9 +18,9 @@ response.send(`
 // cs-linuxlab-##.stlawu.edu:3000/pies/id
 router.get('/:id', function(request, response, next) {
 if (request.params.id === 'apple') {
-  response.send('Apple cakes');
+  response.send('Apple pies');
 } else if (request.params.id === 'cherry') {
-  response.send('Cherry cakes');
+  response.send('Cherry pies');
 } else {
   next(); // Pass on this request
 }
