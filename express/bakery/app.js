@@ -4,6 +4,11 @@ const express = require('express');
 // Create the server
 const app = express();
 
+// Use a view engine
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
+
 // Ignore icon requests
 app.get('/favicon.ico', function(request, response){
   response.status(204).end();
@@ -19,13 +24,7 @@ app.use(function(request, response, next){
 
 // Home page
 app.get('/', function(request, response){
-  response.send(`
-    <h1>Bakery</h1>
-    <ul>
-      <li><a href="/cakes">Cakes</a></li>
-      <li><a href="/pies">Pies</a></li>
-    </ul>
-  `);  // `` for multi-line input
+  response.render('index');
 });
 
 // Routing
