@@ -34,7 +34,7 @@ router.post('/', function(request, response){
     response.status(400).send('Duplicate');
   }else{
     flowers.push(flower);
-    response.status(201).end(flowers);
+    response.status(201).send(flowers);
   }
 });
 
@@ -45,7 +45,7 @@ router.delete('/:id', function(request, response, next){
     next();  // Leads to 404
   }else{
     flowers = flowers.filter(f => f.id !== flower.id);
-    response.status(200).end(flowers);
+    response.status(200).send(flowers);
   }
 });
 
@@ -57,7 +57,7 @@ router.put('/:id', function(request, response, next){
   }else{
     if(request.body.color) flower.color = request.body.color;
     if(request.body.season) flower.season = request.body.season;
-    response.status(200).end(flowers);
+    response.status(200).send(flowers);
   }
 });
 
