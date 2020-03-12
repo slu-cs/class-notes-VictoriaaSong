@@ -1,0 +1,53 @@
+<!-- Example with a loop over a JQuery object. -->
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <h1>Things To Do</h1>
+    <ul>
+      <li id="placeholder">Think of something to do!</li>
+    </ul>
+    <form>
+      <input type="text">
+      <button type="submit">Add</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+
+      // Add to the to-do list
+      $('form').on('submit', function(event) {
+        event.preventDefault();
+        
+        // Grab the text and empty the box
+        const input = $('input');
+        const item = input.val();
+        input.val('');
+        
+        // Add a non-empty item to the list
+        if (item) {
+          $('#placeholder').remove();
+          $('ul').append($(`
+            <li>
+             <span>${item}</span>
+             <button>Delete</button>
+            </li>
+          `));
+        }
+      });
+      
+      // Delete from the to-do list
+      $('ul').on('click', 'button', function(event) {
+        $(this).closest('li').remove();
+        
+        // Put back the placeholder if it's empty
+        const items = $('li');
+        if (items.length == 0) {
+          $('ul').append($('<li id="placeholder">Think of something to do!</li>'));
+        }
+      });
+
+    </script>
+  </body>
+</html>
