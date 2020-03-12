@@ -30,7 +30,7 @@ app.get('/', function(request, response){
 });
 
 // Manage a collection of flowers
-app.get('/flowers', require('./flowers.js'));
+app.use('/flowers', require('./flowers.js'));
 
 // Handle undefined routes
 app.use(function(request, response, next){
